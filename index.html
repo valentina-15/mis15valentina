@@ -170,9 +170,16 @@ Una noche para recordar ✨
 </div>
 
 <div class="card">
-<h2>📍 Lugar</h2>
-<p>Salón New Dream</p>
-<p>Alvear 1647 - Villa Ballester</p>
+<h2>⏳ Cuenta Regresiva</h2>
+
+<div id="contador" style="
+font-size:32px;
+font-weight:bold;
+margin-top:15px;
+">
+Cargando...
+</div>
+
 </div>
 
 <div class="card">
@@ -209,6 +216,48 @@ WhatsApp
 
 </div>
 
-</div>
+</div><script>
+
+const fechaEvento = new Date("July 4, 2026 21:00:00").getTime();
+
+const actualizarContador = () => {
+
+const ahora = new Date().getTime();
+
+const diferencia = fechaEvento - ahora;
+
+const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+const horas = Math.floor(
+(diferencia % (1000 * 60 * 60 * 24))
+/
+(1000 * 60 * 60)
+);
+
+const minutos = Math.floor(
+(diferencia % (1000 * 60 * 60))
+/
+(1000 * 60)
+);
+
+const segundos = Math.floor(
+(diferencia % (1000 * 60))
+/
+1000
+);
+
+document.getElementById("contador").innerHTML =
+dias + " días " +
+horas + " hs " +
+minutos + " min " +
+segundos + " seg";
+
+};
+
+setInterval(actualizarContador,1000);
+
+actualizarContador();
+
+</script>
 </body>
 </html>
