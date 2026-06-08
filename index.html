@@ -82,6 +82,21 @@ body::before{
   letter-spacing:3px;
   color:#ffffff;
   text-shadow:0 0 15px #d9f,0 0 35px #b04dff;
+}
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+section:first-of-type{
+  animation: fadeZoom 2s ease-out;
+  overflow:hidden;
 }    
 </style></head><body>
 <section style="background-image:url('IMG-20260608-WA0004.jpg')"><div class="overlay"></div><div class="content"><h2>Mis 15 Años</h2>
